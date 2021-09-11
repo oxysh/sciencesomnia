@@ -24,8 +24,6 @@
 
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();
-            console.log(current_fs);
-            console.log(next_fs);
 
             //hide the current fieldset with style
             current_fs.animate({

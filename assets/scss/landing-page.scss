@@ -1,5 +1,9 @@
 @import 'env';
 
+body {
+    overflow-x: hidden;
+}
+
 .landing-content {
     margin-top: -100vh;
     position: relative;
@@ -195,8 +199,8 @@ h5.subtitle {
     }
 
     .lights {
-        width: 100%;
-        margin-top: 3rem;
+        width: 90%;
+        margin-top: 16rem;
         position: absolute;
         z-index: -1;
     }
