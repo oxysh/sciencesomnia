@@ -1,0 +1,381 @@
+@import 'env';
+
+.landing-content {
+    margin-top: -100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+// BACKGROUND
+.bg {
+    z-index: -1;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.ag-night-sky-block {
+    z-index: 1;
+    height: 100vh;
+    position: relative;
+    background-color: #000;
+}
+
+.ag-night-sky_sky {
+    height: 87%;
+    z-index: -5;
+}
+
+.ag-night-sky_clouds,
+.ag-night-sky_sky,
+.ag-night-sky_stars,
+.ag-night-sky_twinkling {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ag-night-sky_clouds,
+.ag-night-sky_stars,
+.ag-night-sky_twinkling {
+    display: block;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+}
+
+.ag-night-sky_stars {
+    background: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/night-sky/images/stars.png) repeat 0 0;
+}
+
+.ag-night-sky_twinkling {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat 0 0;
+    animation: an-twinkling 200s linear infinite;
+}
+
+.ag-night-sky_clouds {
+    z-index: 2;
+    position: relative;
+    
+    &::after {
+        content: '';
+        background: url(../img/clouds.png) repeat-x 0 0;
+        background-size: cover;
+        opacity: .7;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;   
+        
+        animation: an-clouds 200s linear infinite;
+    }
+}
+
+@-webkit-keyframes an-twinkling {
+    0% {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes an-twinkling {
+    0% {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes an-clouds {
+    0% {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.logos {
+    width: fit-content;
+    margin: 1.75rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+h1.glitch-wrapper {
+    margin-top: 2.25rem;
+}
+
+h5.subtitle {
+    align-self: center;
+    width: fit-content;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+    'opening robot webinar'
+    'talkshow robot closing';
+    grid-template-columns: 1fr auto 1fr;
+    
+    .robot-box {
+        grid-area: robot;
+        padding: 0 1rem;
+    }
+    
+    .main-robot {
+        align-self: center;
+        width: 100%;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+    }
+    
+    .slide {
+        display: block;
+        position: absolute;
+    }
+    
+    .opening-box {
+        grid-area: opening;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .opening {
+            @include timeline-box();
+        }
+    }
+
+    .talkshow-box {
+        grid-area: talkshow;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .talkshow {
+            @include timeline-box();
+        }
+    }
+
+    .webinar-box {
+        grid-area: webinar;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        .webinar {
+            @include timeline-box(false);
+        }
+    }
+
+    .closing-box {
+        grid-area: closing;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .closing {
+            @include timeline-box(false)
+        }
+    }
+
+    .lights {
+        width: 100%;
+        margin-top: 3rem;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.building {
+    width: 100%;
+    margin-top: -10rem;
+}
+
+.invitation {
+    margin-bottom: 200px;
+    position: relative;
+    
+    .gradation {
+        z-index: -1;
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        top: 0;
+        background-image: linear-gradient(to bottom, #3A156D, #3E186F00);
+    }
+
+    h2 {
+        padding-top: 7.75rem;
+        margin-bottom: 6.5rem;
+    }
+
+    .events-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+
+    .events {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.25rem;
+
+        h5 {
+            margin: 0;
+        }
+
+        .event-container {
+            width: 100%;
+            max-width: 246px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.125rem;
+        }
+            
+        .desc-container {
+            height: 100%;
+            width: 100%;
+            transition: .3s;
+            display: flex;
+            position: absolute;
+            top: 0;
+            justify-content: center;
+            align-items: center; 
+            
+            &:hover {
+                opacity: 1;
+                height: 100%;
+                background: rgba(0,0,0,0.6);
+                
+                &>.desc {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .join-webinar {
+            @include join-container(#9011CA);
+        }
+
+        .join-festival {
+            @include join-container(#637CFF);
+        }
+
+        .join-talkshow {
+            @include join-container(#C01FC0);
+        }
+    }
+
+    .join-universe {
+        width: 30%;
+        @include join-btn($white);
+
+        &:hover, &:focus {
+            color: $black;
+        }
+    }
+}
+
+footer {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    
+    p {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    
+        font-family: 'Roboto', sans-serif;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .timeline {
+        column-gap: 4rem;
+        row-gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'opening webinar'
+        'talkshow closing'
+        'robot robot';
+
+        .robot-box {
+            grid-area: robot;
+            margin-top: -4rem;
+            display: flex;
+            justify-content: center;
+            
+            .main-robot {
+                width: 50%;
+            }
+        }
+
+        .opening-box {
+            grid-area: opening;
+        }
+
+        .talkshow-box {
+            grid-area: talkshow;
+        }
+
+        .webinar-box {
+            grid-area: webinar;
+        }
+
+        .closing-box {
+            grid-area: closing;
+        }
+
+        .lights {
+            margin-top: 0;
+            top: 50%;
+        }
+    }
+
+    .invitation {
+        .gradation {
+            height: 30vh;
+        }
+
+        .events {
+            flex-direction: column;
+        }
+
+        .join-universe {
+            width: 100%;
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1.5rem;
+
+        p {
+            flex-direction: column;
+        }
+    }
+}
