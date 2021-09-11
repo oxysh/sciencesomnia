@@ -291,8 +291,36 @@ h5.subtitle {
         @include join-btn($white);
 
         &:hover, &:focus {
-            color: $black;
+            h5 {
+                color: $black;
+            }
         }
+    }
+}
+
+#comingSoon {
+    .modal-dialog {
+        max-width: 400px;
+    }
+
+    .modal-content {
+        background-color: #0d031c;
+        border: 2px solid #F5F4F4;
+    }
+
+    .modal-body {
+        padding: 3rem;
+    }
+
+    .modal-footer {
+        justify-content: center;
+        border: none;
+    }
+
+    button {
+        width: fit-content;
+        color: #0d031c;
+        background-color: #F5F4F4;
     }
 }
 

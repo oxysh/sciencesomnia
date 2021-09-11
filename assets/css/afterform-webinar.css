@@ -490,6 +490,7 @@ body {
 }
 
 fieldset {
+  margin: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -506,8 +507,7 @@ fieldset {
   gap: 26px;
   max-width: 425px;
   width: 100%;
-  max-height: 654px;
-  height: 100vh;
+  height: 654px;
   padding: 30px;
   overflow: hidden;
   border: 2px solid #D477FF;

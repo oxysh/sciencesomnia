@@ -1399,8 +1399,36 @@ h5.subtitle {
   display: none;
 }
 
-.invitation .join-universe:hover, .invitation .join-universe:focus {
+.invitation .join-universe:hover h5, .invitation .join-universe:focus h5 {
   color: #010101;
+}
+
+#comingSoon .modal-dialog {
+  max-width: 400px;
+}
+
+#comingSoon .modal-content {
+  background-color: #0d031c;
+  border: 2px solid #F5F4F4;
+}
+
+#comingSoon .modal-body {
+  padding: 3rem;
+}
+
+#comingSoon .modal-footer {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: none;
+}
+
+#comingSoon button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #0d031c;
+  background-color: #F5F4F4;
 }
 
 footer {
