@@ -473,12 +473,135 @@
 body {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+body::before {
+  content: '';
+  width: 100%;
+  height: 100vh;
+  position: fixed;
   background-image: url(../img/bg-form.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+body.webinar fieldset {
+  border: 2px solid #D477FF;
+}
+
+body.webinar fieldset a:hover {
+  color: #D477FF;
+}
+
+body.webinar .input__element:focus {
+  -webkit-box-shadow: inset 0 -2px 0 0 #D477FF;
+          box-shadow: inset 0 -2px 0 0 #D477FF;
+}
+
+body.webinar .button {
+  background: #D477FF;
+}
+
+body.webinar .previous.button__icon::before {
+  background: #D477FF;
+}
+
+body.webinar .previous.button__icon::after {
+  border-top: 1px solid #D477FF;
+  border-right: 1px solid #D477FF;
+}
+
+body.webinar label[for='inputFoto'] .upload,
+body.webinar label[for='inputIdentitas'] .upload,
+body.webinar label[for='inputFollow'] .upload,
+body.webinar label[for='inputFollowFest'] .upload,
+body.webinar label[for='inputRepost'] .upload {
+  background-color: #D477FF;
+}
+
+body.talkshow fieldset {
+  border: 2px solid #FF49FF;
+}
+
+body.talkshow fieldset a:hover {
+  color: #FF49FF;
+}
+
+body.talkshow .input__element:focus {
+  -webkit-box-shadow: inset 0 -2px 0 0 #FF49FF;
+          box-shadow: inset 0 -2px 0 0 #FF49FF;
+}
+
+body.talkshow .button {
+  background: #FF49FF;
+}
+
+body.talkshow .previous.button__icon::before {
+  background: #FF49FF;
+}
+
+body.talkshow .previous.button__icon::after {
+  border-top: 1px solid #FF49FF;
+  border-right: 1px solid #FF49FF;
+}
+
+body.talkshow label[for='inputFoto'] .upload,
+body.talkshow label[for='inputIdentitas'] .upload,
+body.talkshow label[for='inputFollow'] .upload,
+body.talkshow label[for='inputFollowFest'] .upload,
+body.talkshow label[for='inputRepost'] .upload {
+  background-color: #FF49FF;
+}
+
+body.festival fieldset {
+  border: 2px solid #637CFF;
+}
+
+body.festival fieldset a:hover {
+  color: #637CFF;
+}
+
+body.festival .input__element:focus {
+  -webkit-box-shadow: inset 0 -2px 0 0 #637CFF;
+          box-shadow: inset 0 -2px 0 0 #637CFF;
+}
+
+body.festival .button {
+  background: #637CFF;
+}
+
+body.festival .previous.button__icon::before {
+  background: #637CFF;
+}
+
+body.festival .previous.button__icon::after {
+  border-top: 1px solid #637CFF;
+  border-right: 1px solid #637CFF;
+}
+
+body.festival label[for='inputFoto'] .upload,
+body.festival label[for='inputIdentitas'] .upload,
+body.festival label[for='inputFollow'] .upload,
+body.festival label[for='inputFollowFest'] .upload,
+body.festival label[for='inputRepost'] .upload {
+  background-color: #637CFF;
+}
+
 .container {
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container form {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -513,7 +636,6 @@ fieldset {
   height: 654px;
   padding: 30px;
   overflow: hidden;
-  border: 2px solid #637CFF;
   background-color: #2D2D38E6;
   -webkit-clip-path: polygon(0 0, 20px 0, 20px 0, 20px 0, 0 0, 0 20px);
           clip-path: polygon(0 0, 20px 0, 20px 0, 20px 0, 0 0, 0 20px);
@@ -574,6 +696,74 @@ fieldset h4 {
   margin-bottom: 24px;
 }
 
+fieldset:not(:first-of-type) {
+  display: none;
+}
+
+fieldset.special {
+  max-width: 850px;
+}
+
+fieldset.special p {
+  margin: 0;
+}
+
+fieldset.special .input p.caption {
+  padding: 0;
+  padding-top: .3rem;
+  padding-bottom: .3rem;
+}
+
+fieldset.special .top {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 'satu dua' 'tiga empat' 'lima lima';
+}
+
+fieldset.special .top .satu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: satu;
+}
+
+fieldset.special .top .dua {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: dua;
+}
+
+fieldset.special .top .tiga {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: tiga;
+}
+
+fieldset.special .top .empat {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: empat;
+}
+
+fieldset.special .top .lima {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: lima;
+}
+
+.oneline {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
 .input {
   position: relative;
   display: -webkit-box;
@@ -592,37 +782,37 @@ fieldset h4 {
 .input p.caption {
   padding: 12px 20px 0 20px;
   margin: 0;
+  color: #b7b7b7;
 }
 
-.input__element {
-  border: 0;
+.input__element, .custom-select {
   margin: 0;
   width: 100%;
+  padding: 14px 21px;
+  border: none;
+  background-color: #110F15;
   -webkit-box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.5);
           box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.5);
-  background: rgba(0, 0, 0, 0.3);
-  height: 46px;
   -webkit-transition: -webkit-box-shadow 0.4s ease;
   transition: -webkit-box-shadow 0.4s ease;
   transition: box-shadow 0.4s ease;
   transition: box-shadow 0.4s ease, -webkit-box-shadow 0.4s ease;
-  padding-left: 10px;
-  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
   font-size: 16px;
+  line-height: 18px;
 }
 
-.input__element:focus {
-  -webkit-box-shadow: inset 0 -2px 0 0 #637CFF;
-          box-shadow: inset 0 -2px 0 0 #637CFF;
+.input__element:focus, .custom-select:focus {
   outline: none;
 }
 
 .input__label {
   font-size: 16px;
+  line-height: 18px;
   position: absolute;
-  top: 15px;
+  top: 14px;
   left: 21px;
-  color: rgba(255, 255, 255, 0.4);
+  color: #DAD9D9;
   pointer-events: none;
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transition: -webkit-transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -640,7 +830,6 @@ fieldset h4 {
 }
 
 .button {
-  background: #637CFF;
   border: 0;
   padding: 0;
   margin: 0;
@@ -651,6 +840,8 @@ fieldset h4 {
   text-align: left;
   padding: 0 20px;
   cursor: pointer;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
 }
 
 .button:focus {
@@ -693,4 +884,120 @@ fieldset h4 {
   position: relative;
   color: #010101;
 }
-/*# sourceMappingURL=afterform-festival.css.map */
+
+.button__icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+  right: 25px;
+  width: 24px;
+  height: 24px;
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button__icon:before {
+  content: '';
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 12px;
+  background: #110F15;
+}
+
+.button__icon:after {
+  content: '';
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  right: 0;
+  top: 8px;
+  border-top: 1px solid #110F15;
+  border-right: 1px solid #110F15;
+}
+
+.button__icon.previous::after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  right: unset;
+  left: 0;
+}
+
+.back-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0;
+  position: relative;
+}
+
+.back-btn .button__icon {
+  position: relative;
+  top: 0;
+  left: 1px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: .5rem;
+}
+
+label[for='inputFoto'],
+label[for='inputIdentitas'],
+label[for='inputFollow'],
+label[for='inputFollowFest'],
+label[for='inputRepost'] {
+  padding: 10px 10px 10px 21px;
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: none;
+  background-color: #110F15;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+label[for='inputFoto'] span,
+label[for='inputIdentitas'] span,
+label[for='inputFollow'] span,
+label[for='inputFollowFest'] span,
+label[for='inputRepost'] span {
+  font-size: 14px;
+  color: #DAD9D9;
+}
+
+label[for='inputFoto'] .upload,
+label[for='inputIdentitas'] .upload,
+label[for='inputFollow'] .upload,
+label[for='inputFollowFest'] .upload,
+label[for='inputRepost'] .upload {
+  padding: 8px 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #110F15;
+}
+/*# sourceMappingURL=registration.css.map */

@@ -141,8 +141,8 @@ $fuchsia: #FF0CFF;
     
     .desc {
         opacity: 0;
-        width: 70%; 
-        height: 70%;
+        width: 80%; 
+        height: 80%;
         padding: 9px 5px;
         overflow-y: scroll;
         border: 2px solid $color;
@@ -157,27 +157,66 @@ $fuchsia: #FF0CFF;
     }
 }
 
+@mixin coloring-regis($color) {
+  fieldset {
+    border: 2px solid $color;
+
+    a:hover {
+      color: $color;
+    }
+  }
+
+  .input__element:focus {
+    box-shadow: inset 0 -2px 0 0 $color;
+  }
+
+  .button {
+    background: $color;
+  }
+
+  .previous.button__icon {
+    &::before {
+      background: $color;
+    }
+    
+    &::after {
+      border-top: 1px solid $color;
+      border-right: 1px solid $color;
+    }
+  }
+
+  label[for='inputFoto'],
+  label[for='inputIdentitas'],
+  label[for='inputFollow'],
+  label[for='inputFollowFest'],
+  label[for='inputRepost'] {
+    .upload {
+      background-color: $color;
+    }
+  }
+}
+
 // ANIMATION
 @keyframes glitch {
     25% {
-        background-color: red;
+        background-color: $fuchsia;
         transform: translateX(-10px);
         letter-spacing: 10px;
     }
     35% {
-        background-color: green;
+        background-color: $prussian-blue;
         transform: translate(10px);
     }
     59% {
         opacity: 0;
     }
     60% {
-        background-color: blue;
+        background-color: $heliotrope;
         transform: translate(-10px);
         filter: blur(5px);
     }
     100% {
-        background-color: $fuchsia;
+        background-color: $indigo;
         blur: (5px);
     }
 }

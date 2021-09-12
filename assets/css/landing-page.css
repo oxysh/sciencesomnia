@@ -1,12 +1,12 @@
 @-webkit-keyframes glitch {
   25% {
-    background-color: red;
+    background-color: #FF0CFF;
     -webkit-transform: translateX(-10px);
             transform: translateX(-10px);
     letter-spacing: 10px;
   }
   35% {
-    background-color: green;
+    background-color: #1B3864;
     -webkit-transform: translate(10px);
             transform: translate(10px);
   }
@@ -14,27 +14,27 @@
     opacity: 0;
   }
   60% {
-    background-color: blue;
+    background-color: #D477FF;
     -webkit-transform: translate(-10px);
             transform: translate(-10px);
     -webkit-filter: blur(5px);
             filter: blur(5px);
   }
   100% {
-    background-color: #FF0CFF;
+    background-color: #520575;
     blur: 5px;
   }
 }
 
 @keyframes glitch {
   25% {
-    background-color: red;
+    background-color: #FF0CFF;
     -webkit-transform: translateX(-10px);
             transform: translateX(-10px);
     letter-spacing: 10px;
   }
   35% {
-    background-color: green;
+    background-color: #1B3864;
     -webkit-transform: translate(10px);
             transform: translate(10px);
   }
@@ -42,14 +42,14 @@
     opacity: 0;
   }
   60% {
-    background-color: blue;
+    background-color: #D477FF;
     -webkit-transform: translate(-10px);
             transform: translate(-10px);
     -webkit-filter: blur(5px);
             filter: blur(5px);
   }
   100% {
-    background-color: #FF0CFF;
+    background-color: #520575;
     blur: 5px;
   }
 }
@@ -852,7 +852,7 @@ h5.subtitle {
   gap: 2.25rem;
 }
 
-.invitation .events h5 {
+.invitation .events h5, .invitation .events p {
   margin: 0;
 }
 
@@ -897,6 +897,10 @@ h5.subtitle {
   opacity: 1;
 }
 
+.invitation .events .desc-container:hover > .desc h5, .invitation .events .desc-container:hover > .desc p {
+  padding-bottom: .5rem;
+}
+
 .invitation .events .join-webinar .event-card {
   height: 223px;
   padding: 40px 0 50px 0;
@@ -920,8 +924,8 @@ h5.subtitle {
 
 .invitation .events .join-webinar .desc {
   opacity: 0;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   padding: 9px 5px;
   overflow-y: scroll;
   border: 2px solid #9011CA;
@@ -1058,8 +1062,8 @@ h5.subtitle {
 
 .invitation .events .join-festival .desc {
   opacity: 0;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   padding: 9px 5px;
   overflow-y: scroll;
   border: 2px solid #637CFF;
@@ -1196,8 +1200,8 @@ h5.subtitle {
 
 .invitation .events .join-talkshow .desc {
   opacity: 0;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   padding: 9px 5px;
   overflow-y: scroll;
   border: 2px solid #C01FC0;
@@ -1458,7 +1462,11 @@ footer p {
       -ms-flex-align: center;
           align-items: center;
   gap: .5rem;
-  font-family: 'Roboto', sans-serif;
+  cursor: context-menu;
+}
+
+footer a:hover {
+  color: #D477FF;
 }
 
 @media screen and (max-width: 768px) {

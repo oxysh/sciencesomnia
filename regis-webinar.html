@@ -13,11 +13,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/env.css">
-    <link rel="stylesheet" href="assets/css/regis-webinar.css">
+    <link rel="stylesheet" href="assets/css/registration.css">
 
 </head>
 
-<body>
+<body class="webinar">
     <div class="container">
         <form class="form" action="" method="get">
             <fieldset>
@@ -48,31 +48,43 @@
 
                 <button type="button" class="button">
                     <h5 class="button__label next">Next</h5>
+                    <div class="button__icon"></div>
                 </button>
             </fieldset>
 
             <fieldset>
                 <div class="top">
-                    <h4 style="font-weight: 400;">register webinar</h4>
+                    <div class="header">
+                        <button class="back-btn">
+                            <div class="previous button__icon"></div>
+                        </button>
+                        <h4 style="font-weight: 400;">register webinar</h4>
+                    </div>
                     <div class="input">
                         <label for="" style="margin-bottom: .5rem;">Hal apa yang ingin ditanyakan kepada
                             narasumber?</label>
-                        <textarea name="" id="" rows="4"></textarea>
+                        <textarea name="" id="" class="input__element" rows="4"></textarea>
                     </div>
                     <div class="input">
                         <label for="" style="margin-bottom: .5rem;">Hal apa yang ingin didapatkan dalam Webinar?</label>
-                        <textarea name="" id="" rows="4"></textarea>
+                        <textarea name="" id="" class="input__element" rows="4"></textarea>
                     </div>
                 </div>
 
                 <button type="button" class="button">
                     <h5 class="button__label next">Next</h5>
+                    <div class="button__icon"></div>
                 </button>
             </fieldset>
 
             <fieldset>
                 <div class="top">
-                    <h4 style="font-weight: 400;">register webinar</h4>
+                    <div class="header">
+                        <button class="back-btn">
+                            <div class="previous button__icon"></div>
+                        </button>
+                        <h4 style="font-weight: 400;">register webinar</h4>
+                    </div>
                     <div class="input">
                         <p>Bukti screenshot Follow IG @sciencesomnia 2021</p>
                         <label for="inputFollow">
@@ -91,6 +103,7 @@
 
                 <a href="afterform-webinar.html" type="button" class="button">
                     <h5 class="button__label">Daftar</h5>
+                    <div class="button__icon"></div>
                 </a>
             </fieldset>
         </form>
